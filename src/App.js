@@ -10,20 +10,50 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state= {
-      attemptedNumbers: [],
-      selectedNumber: Math.round(Math.random() * 100)
+      guesses: [],
+      selectedNumber: Math.round(Math.random() * 100),
+      feedback: 'Give it a whirl!'
     }
   }
 
 
-  getInitialState (){
-    // console.log(rando);
-    // if(this.state.selectedNumber=== ''){
-    //   this.setState({
-    //     selectedNumber: this.randomNumber
-    //   })
-    // }
-    console.log(this.state.selectedNumber);
+  newGame(){
+    this.setState({
+      guesses: [],
+      feedback: 'Do it, to it!',
+      selectedAnswer:Math.round(Math.random() * 100)
+    });
+  }
+
+  guess(guess){
+    guess = parseInt(guess, 10);
+    if(isNaN(guess)){
+      this.setState({
+        feedback: 'Please enter a valid number'
+      });
+      return;
+    }
+    const difference = Math.abs(guess - this.state.selectedNumber);
+    let feedback;
+    if(difference >= 50){
+      feedback= 'No way Jose';
+    }
+    else if( difference >=30){
+      feedback = 'Sorry, not so good';
+    }
+    else if(difference >=10){
+      feedback  = 'It is hot in here in is it just me?';
+    }
+    else if(difference >3){
+      feedback = 'So hot!';
+    }
+    else{
+      feedback = 'Right on the money!';
+    }
+    this.setState = ({
+      feedback,
+      guesses: [...this.state.guesses, guess]
+    });
   }
 
   render() {
