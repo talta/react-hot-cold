@@ -61,9 +61,8 @@ class App extends Component {
       <div className="App">
         <Header onNewGame={()=>this.onNewGame()} />
         <FeedbackHeader feedback={this.state.feedback} onGuess={(guess)=> this.guess(guess)}/>
-        <Form />
-        <GuessCounter />
-        <GuessList />
+        <GuessCounter count={this.state.guesses.length}/>
+        <GuessList guesses={this.state.guesses}/>
       </div>
     );
   }
