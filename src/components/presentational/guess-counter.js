@@ -4,7 +4,7 @@ export default function GuessCounter(props) {
     return (
       <p>
         Guess #
-        <span id="count"></span>
+        <span id="count">{props.count}</span>
         !
       </p>
     );
