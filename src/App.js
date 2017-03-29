@@ -4,6 +4,7 @@ import FeedbackHeader from './components/presentational/feedback-header';
 import Form from './components/presentational/form';
 import GuessCounter from './components/presentational/guess-counter';
 import GuessList from './components/presentational/guess-list';
+import Header from '.components/presentational/header';
 
 class App extends Component {
   constructor(props){
@@ -31,6 +32,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Header onNewGame={()=>this.onNewGame()}; />
         <FeedbackHeader />
         <Form />
         <GuessCounter />
