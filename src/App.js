@@ -11,13 +11,10 @@ class App extends Component {
     super(props);
     this.state= {
       attemptedNumbers: [],
-      selectedNumber: this.randomNumber
+      selectedNumber: Math.round(Math.random() * 100)
     }
   }
 
-  randomNumber(){
-    return Math.floor((Math.random() * 100) + 1);
-  }
 
   getInitialState (){
     // console.log(rando);
@@ -32,8 +29,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header onNewGame={()=>this.onNewGame()}; />
-        <FeedbackHeader />
+        <Header onNewGame={()=>this.onNewGame()} />
+        <FeedbackHeader feedback={this.state.feedback} onGuess={(guess)=> this.guess(guess)}/>
         <Form />
         <GuessCounter />
         <GuessList />
