@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Form(props){
+export default function InfoModal(props){
 	onClose(event){
 		event.preventDefault;
 		if(this.props.onClose){
