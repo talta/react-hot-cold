@@ -9,8 +9,7 @@ export default function GuessList(props)  {
 
     return (
       <div>
-        <ul id="guessList" className="guessList clearFix">
-
+        <ul id="guessList" className="guessBox clearFix">
           {guesses}
         </ul>
       </div>
