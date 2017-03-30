@@ -1,19 +1,19 @@
 import React, {Component} from 'react';
 import './App.css';
+import Header from './components/presentational/header';
 import FeedbackHeader from './components/presentational/feedback-header';
-import Form from './components/presentational/form';
 import GuessCounter from './components/presentational/guess-counter';
 import GuessList from './components/presentational/guess-list';
-import Header from './components/presentational/header';
 
-class App extends Component {
+
+export default class App extends Component {
   constructor(props){
     super(props);
     this.state= {
       guesses: [],
       selectedNumber: Math.round(Math.random() * 100),
       feedback: 'Give it a whirl!'
-    }
+    };
   }
 
 
@@ -50,7 +50,7 @@ class App extends Component {
     else{
       feedback = 'Right on the money!';
     }
-    this.setState = ({
+    this.setState({
       feedback,
       guesses: [...this.state.guesses, guess]
     });
@@ -58,8 +58,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Header onNewGame={()=>this.onNewGame()} />
+      <div>
+        <Header onNewGame={()=>this.newGame()} />
         <FeedbackHeader feedback={this.state.feedback} onGuess={(guess)=> this.guess(guess)}/>
         <GuessCounter count={this.state.guesses.length}/>
         <GuessList guesses={this.state.guesses}/>
@@ -67,5 +67,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 export default class InfoModal extends Component{
 	onClose(event){
-		event.preventDefault;
+		event.preventDefault();
 		if(this.props.onClose) {
 			this.props.onClose();
 		}
@@ -21,7 +21,7 @@ export default class InfoModal extends Component{
 						</ul>
 					</div>
 					<p> So are you ready to interact with my React application?</p>
-					<a className= "close" href="#" onClick={e => this.onClose(e)}>Let's do it!</a>
+					<a className="close" href="#" onClick={e=> this.onClose(e)}>Let's do it!</a>
 				</div>
 			</div>
 		);
