@@ -7,5 +7,8 @@ describe('<FeedbackHeader />', ()=>{
 	it('renders without crashing', ()=>{
 		shallow(<FeedbackHeader />);
 	});
-
+	it('renders the feedback id properly', ()=>{
+		const wrapper = shallow(<FeedbackHeader />);
+		expect(wrapper.is('#feedback')).to.equal(true);
+	});
 });
