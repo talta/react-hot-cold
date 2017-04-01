@@ -11,4 +11,8 @@ describe('<FeedbackHeader />', ()=>{
 		const wrapper = shallow(<FeedbackHeader />);
 		expect(wrapper.is('#feedback')).to.equal(true);
 	});
+	it('should have the onGuess method', ()=>{
+		const wrapper = shallow(<FeedbackHeader />);
+		wrapper.instance().onGuess();
+	});
 });
