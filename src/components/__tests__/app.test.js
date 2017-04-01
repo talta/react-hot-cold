@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow, mount} from 'enzyme';
-import TestUtils from 'eact-addons-test-utils';
+import TestUtils from 'react-addons-test-utils';
 
 import App from '../../App.js'
 

@@ -1,7 +1,8 @@
 import React from 'react';
 import {shallow, mount} from 'enzyme';
+import { expect } from 'chai';
 
-import Header from './header';
+import Header from '../presentational/header';
 
 describe('<Header />', ()=>{
 	it('should render without crashing', ()=>{
@@ -13,8 +14,6 @@ describe('<Header />', ()=>{
 	});
 	it('should initially hide the info modal', ()=>{
 		const wrapper = shallow(<Header />);
-		expect(wrapper.find('InfoModal').exists()).toEqual(true);
+		expect(wrapper.find('InfoModal').exists()).to.equal(false);
 	});
-	
-
 });
