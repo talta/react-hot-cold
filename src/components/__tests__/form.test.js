@@ -7,7 +7,7 @@ describe('<Form />', ()=>{
 	it('renders the form component wihtout crashing', ()=>{
 		shallow(<Form />);
 	});
-	it('renders the form', ()=>{
+	it('renders the form with a formArea class', ()=>{
 		const wrapper= shallow(<Form />);
 		expect(wrapper.hasClass('formArea')).toEqual(true);
 	});
