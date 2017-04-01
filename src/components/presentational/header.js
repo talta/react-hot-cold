@@ -24,12 +24,9 @@ export default class Header extends Component {
 	
 	return (
 		<header>
-			<TopNav onInfo={()=> this.toggleModal()} 
-				onNewGame={this.props.onNewGame}
-			/>
+			<TopNav onInfo={()=> this.toggleModal()} onNewGame={this.props.onNewGame}/>
 			{infoModal}
 			<h1> Hot or Cold </h1>
 		</header>
 	);
-	}
 }
